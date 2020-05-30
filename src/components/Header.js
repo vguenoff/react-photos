@@ -3,21 +3,21 @@ import styled from 'styled-components'
 
 const StyledHeader = styled.header`
     h1 {
-        padding: 10px 0;
-        border-bottom: 2px solid var(--yellow);
+        margin: 20px 0;
+        padding-bottom: 25px;
+        border-bottom: 3px solid var(--yellow);
     }
 
     ul {
         display: flex;
         flex-direction: row;
         padding: 0;
-        margin: 30px 0;
 
         li {
             cursor: pointer;
             font-weight: bold;
             list-style: none;
-            margin: 5px 40px 5px 3px;
+            margin: 0 40px 5px 4px;
             padding: 10px 0;
             border-bottom: 2px solid transparent;
 
