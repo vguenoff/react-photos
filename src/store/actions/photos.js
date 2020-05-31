@@ -15,16 +15,16 @@ export const getPhotos = () => async dispatch => {
     })
 }
 
-export const addToFavourites = movie => dispatch => {
+export const addToFavourites = photo => dispatch => {
     return dispatch({
         type: actions.addToFavourites,
-        payload: movie,
+        payload: photo,
     })
 }
 
-export const removeFromFavourites = movie => dispatch => {
+export const removeFromFavourites = photo => dispatch => {
     return dispatch({
         type: actions.removeFromFavourites,
-        payload: movie,
+        payload: photo,
     })
 }

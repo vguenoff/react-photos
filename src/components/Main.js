@@ -2,6 +2,11 @@ import React, { useEffect } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
+import { Switch, Route } from 'react-router-dom'
+
+import Home from './Home'
+import Favourites from './Favourites'
+
 import {
     getPhotos,
     // addToFavourites,
@@ -15,11 +20,14 @@ const Main = ({ photosList, getPhotos }) => {
 
     return (
         <main>
-            <code>
-                {photosList?.length > 0
-                    ? JSON.stringify(photosList)
-                    : 'Loading...'}
-            </code>
+            <Switch>
+                <Route path="/favourites">
+                    <Favourites />
+                </Route>
+                <Route path="/">
+                    <Home {...{ photosList }} />
+                </Route>
+            </Switch>
         </main>
     )
 }

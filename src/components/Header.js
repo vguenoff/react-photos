@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 const StyledHeader = styled.header`
+    margin-bottom: 35px;
+
     h1 {
         margin: 20px 0;
         padding-bottom: 25px;
@@ -14,13 +17,17 @@ const StyledHeader = styled.header`
         padding: 0;
 
         li {
+            list-style: none;
+        }
+
+        a {
             cursor: pointer;
             font-weight: bold;
-            list-style: none;
             margin: 0 40px 5px 4px;
             padding: 10px 0;
             border-bottom: 2px solid transparent;
 
+            &.is-active,
             &:hover {
                 border-bottom: 2px solid var(--red);
             }
@@ -33,8 +40,16 @@ const Header = () => (
         <h1>React Photos</h1>
         <nav>
             <ul>
-                <li>All Photo Albums</li>
-                <li>Favourites</li>
+                <li>
+                    <NavLink exact to="/" activeClassName="is-active">
+                        Photos
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/favourites" activeClassName="is-active">
+                        Favourites
+                    </NavLink>
+                </li>
             </ul>
         </nav>
     </StyledHeader>

@@ -2,6 +2,8 @@ import React from 'react'
 import 'normalize.css'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
+import { BrowserRouter as Router } from 'react-router-dom'
+
 import configureStore from '../store'
 
 import GlobalStyle from '../GlobalStyle'
@@ -15,8 +17,10 @@ const App = () => {
         <Provider {...{ store }}>
             <PersistGate {...{ persistor }} loading={null}>
                 <GlobalStyle />
-                <Header />
-                <Main />
+                <Router>
+                    <Header />
+                    <Main />
+                </Router>
             </PersistGate>
         </Provider>
     )
