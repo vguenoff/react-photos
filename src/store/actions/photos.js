@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-unfetch'
+
 // action creator
 export const actions = {
     getPhotos: 'GET_PHOTOS',
