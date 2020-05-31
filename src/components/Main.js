@@ -43,7 +43,13 @@ const Main = ({
                     />
                 </Route>
                 <Route path="/favourites">
-                    <Favourites />
+                    <Favourites
+                        {...{
+                            favourites,
+                            addToFavourites,
+                            removeFromFavourites,
+                        }}
+                    />
                 </Route>
             </Switch>
         </main>

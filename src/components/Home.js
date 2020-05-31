@@ -1,16 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import Loading from './Loading'
 import Cover from './Cover'
-import styled from 'styled-components'
+import Headline from './Headline'
 
 const StyledHome = styled.section`
-    > p {
-        padding: 15px 5px 0 5px;
-        border-top: 1px solid var(--primary);
-    }
-
-    > div {
+    > section {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -25,14 +21,14 @@ const Home = ({ photosList }) => {
 
     return (
         <StyledHome>
-            <p>Select an album from the list.</p>
-            <div>
+            <Headline text="Select an album from the list" />
+            <section>
                 {photosListUnique.length === 0 ? (
                     <Loading />
                 ) : (
                     photosListUnique.map(id => <Cover key={id} {...{ id }} />)
                 )}
-            </div>
+            </section>
         </StyledHome>
     )
 }
