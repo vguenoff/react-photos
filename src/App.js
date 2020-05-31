@@ -4,10 +4,10 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import configureStore from '../store'
+import configureStore from './store'
 
-import GlobalStyle from '../GlobalStyle'
-import Header from './Header'
+import GlobalStyle from './GlobalStyle'
+import Header from './components/Header'
 import Main from './Main'
 
 const { store, persistor } = configureStore()

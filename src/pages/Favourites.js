@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Headline from './Headline'
-import AlbumGrid from './AlbumGrid'
+import Headline from '../components/Headline'
+import AlbumGrid from '../components/AlbumGrid'
 
 const Album = ({ favourites, addToFavourites, removeFromFavourites }) => {
     return (

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-import Headline from './Headline'
-import AlbumGrid from './AlbumGrid'
+import Headline from '../components/Headline'
+import AlbumGrid from '../components/AlbumGrid'
 
 const Album = ({
     photosList,

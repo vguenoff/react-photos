@@ -4,16 +4,16 @@ import { connect } from 'react-redux'
 
 import { Switch, Route } from 'react-router-dom'
 
-import Home from './Home'
-import Favourites from './Favourites'
-import Album from './Album'
+import Home from './pages/Home'
+import Favourites from './pages/Favourites'
+import Album from './pages/Album'
 
-import { getPhotos } from '../store/actions/photos'
+import { getPhotos } from './store/actions/photos'
 
 import {
     addToFavourites,
     removeFromFavourites,
-} from '../store/actions/favourites'
+} from './store/actions/favourites'
 
 const Main = ({
     photosList,
