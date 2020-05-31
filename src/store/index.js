@@ -6,11 +6,6 @@ import storage from 'redux-persist/lib/storage'
 
 import rootReducer from './reducers/_rootReducer'
 
-const appliedMiddleware =
-    process.env.REACT_APP_ENV === 'production'
-        ? applyMiddleware(thunkMiddleware)
-        : composeWithDevTools(applyMiddleware(thunkMiddleware))
-
 const persistConfig = {
     key: 'root',
     storage,
@@ -21,7 +16,7 @@ const configureStore = (initialState = {}) => {
     const store = createStore(
         persistReducer(persistConfig, rootReducer),
         initialState,
-        appliedMiddleware
+        composeWithDevTools(applyMiddleware(thunkMiddleware))
     )
 
     const persistor = persistStore(store)
