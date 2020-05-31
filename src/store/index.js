@@ -7,7 +7,7 @@ import storage from 'redux-persist/lib/storage'
 import rootReducer from './reducers/_rootReducer'
 
 const appliedMiddleware =
-    process.env.NODE_ENV === 'production'
+    process.env.REACT_APP_ENV === 'production'
         ? applyMiddleware(thunkMiddleware)
         : composeWithDevTools(applyMiddleware(thunkMiddleware))
 
