@@ -6,7 +6,7 @@ import AlbumGrid from '../components/AlbumGrid'
 const Album = ({ favourites, addToFavourites, removeFromFavourites }) => {
     return (
         <section>
-            <Headline text="Favourites list / Remove if needed" />
+            <Headline text="Favourites list / Add / Remove" />
             <AlbumGrid
                 list={favourites}
                 {...{ favourites, addToFavourites, removeFromFavourites }}
