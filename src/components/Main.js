@@ -8,13 +8,20 @@ import Home from './Home'
 import Favourites from './Favourites'
 import Album from './Album'
 
-import {
-    getPhotos,
-    // addToFavourites,
-    // removeFromFavourites,
-} from '../store/actions/photos'
+import { getPhotos } from '../store/actions/photos'
 
-const Main = ({ photosList, getPhotos }) => {
+import {
+    addToFavourites,
+    removeFromFavourites,
+} from '../store/actions/favourites'
+
+const Main = ({
+    photosList,
+    getPhotos,
+    favourites,
+    addToFavourites,
+    removeFromFavourites,
+}) => {
     useEffect(() => {
         getPhotos()
     }, [getPhotos])
@@ -22,30 +29,37 @@ const Main = ({ photosList, getPhotos }) => {
     return (
         <main>
             <Switch>
+                <Route exact path="/">
+                    <Home {...{ photosList }} />
+                </Route>
                 <Route path="/albumId/:id">
-                    <Album {...{ photosList }} />
+                    <Album
+                        {...{
+                            photosList,
+                            favourites,
+                            addToFavourites,
+                            removeFromFavourites,
+                        }}
+                    />
                 </Route>
                 <Route path="/favourites">
                     <Favourites />
-                </Route>
-                <Route path="/">
-                    <Home {...{ photosList }} />
                 </Route>
             </Switch>
         </main>
     )
 }
 export default connect(
-    ({ photos }) => ({
+    ({ photos, favourites }) => ({
         photosList: photos.photosList,
-        // favourites: photos.favourites,
+        favourites: favourites.favouritesList,
     }),
     dispatch =>
         bindActionCreators(
             {
                 getPhotos,
-                // addToFavourites,
-                // removeFromFavourites,
+                addToFavourites,
+                removeFromFavourites,
             },
             dispatch
         )

@@ -36,7 +36,9 @@ const StyledHeader = styled.header`
 
 const Header = () => (
     <StyledHeader>
-        <h1>React Photos</h1>
+        <NavLink exact to="/">
+            <h1>React Photos</h1>
+        </NavLink>
         <nav>
             <ul>
                 <li>
