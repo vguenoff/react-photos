@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
     :root {
+        --white: #fff;
         --primary: #2a3747;
         --secondary: #011120;
         --red: #d2002e;
@@ -47,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
     header,
     main {
         width: 100%;
-        max-width: 960px;
+        max-width: 1750px;
         margin: 0 auto;
         padding: 0 20px;
     }

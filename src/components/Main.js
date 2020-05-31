@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import Home from './Home'
 import Favourites from './Favourites'
+import Album from './Album'
 
 import {
     getPhotos,
@@ -21,6 +22,9 @@ const Main = ({ photosList, getPhotos }) => {
     return (
         <main>
             <Switch>
+                <Route path="/albumId/:id">
+                    <Album {...{ photosList }} />
+                </Route>
                 <Route path="/favourites">
                     <Favourites />
                 </Route>

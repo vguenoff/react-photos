@@ -3,9 +3,8 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 const StyledHeader = styled.header`
-    margin-bottom: 35px;
-
     h1 {
+        font-size: 54px;
         margin: 20px 0;
         padding-bottom: 25px;
         border-bottom: 3px solid var(--yellow);
@@ -42,7 +41,7 @@ const Header = () => (
             <ul>
                 <li>
                     <NavLink exact to="/" activeClassName="is-active">
-                        Photos
+                        Albums List
                     </NavLink>
                 </li>
                 <li>
